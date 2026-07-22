@@ -81,11 +81,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   ttq.load('D9GFJARC77U79CKFAEVG');
   ttq.page();
-  ttq.track('CompletePayment');
+
+  // Dispara a compra com os parâmetros exigidos para validar a conta
+  ttq.track('CompletePayment', {
+    content_id: 'produto_afiliados',
+    value: 97.00,
+    currency: 'BRL'
+  });
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
-
 <!-- TikTok Purchase Event Trigger for VTurb Button -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
