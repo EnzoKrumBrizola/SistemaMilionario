@@ -85,6 +85,20 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 </script>
 <!-- TikTok Pixel Code End -->
 
+<!-- TikTok Purchase Event Trigger for VTurb Button -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(e) {
+    // Procura por qualquer clique em um link do Kiwify ou no botão de oferta
+    var target = e.target.closest('a');
+    if (target && target.href && target.href.includes('kiwify.com.br')) {
+      if (typeof ttq !== 'undefined') {
+        ttq.track('CompletePayment');
+      }
+    }
+  });
+});
+</script>
 </head>
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-440 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-440 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 			<div data-elementor-type="wp-post" data-elementor-id="440" class="elementor elementor-440">
