@@ -86,7 +86,7 @@
 	</script>
 	<!-- TikTok Pixel Code End -->
 
-	<!-- Trigger do TikTok para Clique no Botão (InitiateCheckout com parâmetro de conteúdo) -->
+	<!-- Trigger do TikTok para Clique no Botão (InitiateCheckout com contents estruturado) -->
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
 	  document.addEventListener('click', function(e) {
@@ -96,7 +96,13 @@
 	      if (target.href.includes('kiwify.com.br') || target.href.includes('#link') || target.href.includes('#oferta')) {
 	        if (typeof ttq !== 'undefined') {
 	          ttq.track('InitiateCheckout', {
-	            content_id: 'produto_afiliados',
+	            contents: [
+	              {
+	                content_id: 'produto_afiliados',
+	                content_type: 'product',
+	                content_name: 'Sistema Milionario'
+	              }
+	            ],
 	            value: 97.00,
 	            currency: 'BRL'
 	          });
