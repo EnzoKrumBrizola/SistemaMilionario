@@ -86,7 +86,7 @@
 	</script>
 	<!-- TikTok Pixel Code End -->
 
-	<!-- Trigger do TikTok para Clique no Botão de Checkout (InitiateCheckout) -->
+	<!-- Trigger do TikTok para Clique no Botão (InitiateCheckout com parâmetro de conteúdo) -->
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
 	  document.addEventListener('click', function(e) {
@@ -95,7 +95,11 @@
 	      // Se o link for da Kiwify OU for um botão que leva para a oferta no seu site
 	      if (target.href.includes('kiwify.com.br') || target.href.includes('#link') || target.href.includes('#oferta')) {
 	        if (typeof ttq !== 'undefined') {
-	          ttq.track('InitiateCheckout');
+	          ttq.track('InitiateCheckout', {
+	            content_id: 'produto_afiliados',
+	            value: 97.00,
+	            currency: 'BRL'
+	          });
 	        }
 	      }
 	    }
