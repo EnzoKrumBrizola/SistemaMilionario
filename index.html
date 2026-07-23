@@ -77,18 +77,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 </script>
 <!-- TikTok Pixel Code End -->
 
-<!-- TikTok Purchase Event Trigger for Kiwify Button -->
+<!-- Trigger para o clique no botão -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function(e) {
     var target = e.target.closest('a');
     if (target && target.href && target.href.includes('kiwify.com.br')) {
       if (typeof ttq !== 'undefined') {
-        ttq.track('CompletePayment', {
-          content_id: 'produto_afiliados',
-          value: 97.00,
-          currency: 'BRL'
-        });
+        // Mudar de CompletePayment para InitiateCheckout
+        ttq.track('InitiateCheckout'); 
       }
     }
   });
